@@ -115,7 +115,7 @@ export function GallerySection() {
       {active !== null && (
         <div role="dialog" aria-modal="true" aria-label="Image viewer" className="fixed inset-0 z-[60] flex items-center justify-center bg-navy-deep/95 p-4" onClick={() => setActive(null)}>
           <button className="absolute right-4 top-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary-foreground/10 text-primary-foreground" aria-label="Close"><X /></button>
-          <img src={gallery[active].src} alt={gallery[active].alt} className="max-h-[85vh] max-w-full rounded-xl" />
+          <img src={gallery[active]!.src} alt={gallery[active]!.alt} className="max-h-[85vh] max-w-full rounded-xl" />
         </div>
       )}
     </section>
@@ -124,7 +124,7 @@ export function GallerySection() {
 
 export function TestimonialsSection() {
   const [i, setI] = useState(0);
-  const t = testimonials[i];
+  const t = testimonials[i]!;
   const go = (d: number) => setI((i + d + testimonials.length) % testimonials.length);
   return (
     <section className="bg-navy-deep py-24">
